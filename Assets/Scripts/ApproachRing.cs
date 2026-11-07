@@ -7,10 +7,12 @@ public class ApproachRing : MonoBehaviour
     public float approachTime = 0.8f;
     public float startScale = 3f;
 
-    private float elapsed;
+    private Note parentNote;
 
     void Start()
     {
+        parentNote = GetComponentInParent<Note>();
+
         LineRenderer line = GetComponent<LineRenderer>();
 
         line.useWorldSpace = false;
@@ -31,18 +33,17 @@ public class ApproachRing : MonoBehaviour
     }
 
     void Update()
-    {
-        elapsed += Time.deltaTime;
+{
+    float elapsed = parentNote.GetNoteTime();
 
-        float progress = Mathf.Clamp01(elapsed / approachTime);
-        float scale = Mathf.Lerp(startScale, 1f, progress);
+    float progress = Mathf.Clamp01(elapsed / approachTime);
+    float scale = Mathf.Lerp(startScale, 1f, progress);
 
-        transform.localScale = Vector3.one * scale;
+    transform.localScale = Vector3.one * scale;
 
-        if (progress >= 1f)
-        {
-            GetComponentInParent<Note>().ApproachFinished();
-            enabled = false;
-        }
-    }
+    if (progress >= 1f)
+{
+    enabled = false;
+}
+}
 }
