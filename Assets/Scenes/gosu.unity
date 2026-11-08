@@ -412,9 +412,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 3e1045829990f4a419de7d8156a2ba17, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0db66fbcaaf87d84d9a5fcc30f1155f2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1068,8 +1068,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e667b3261efbd4eaebb21d31e68b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioAnalyzer
-  audioClip: {fileID: 8300000, guid: 3e1045829990f4a419de7d8156a2ba17, type: 3}
+  audioClip: {fileID: 8300000, guid: 0db66fbcaaf87d84d9a5fcc30f1155f2, type: 3}
   songManager: {fileID: 595895584}
+  preferredMinBPM: 100
+  preferredMaxBPM: 200
 --- !u!4 &1743258411
 Transform:
   m_ObjectHideFlags: 0
