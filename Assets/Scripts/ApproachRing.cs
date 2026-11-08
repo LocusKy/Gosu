@@ -36,7 +36,9 @@ public class ApproachRing : MonoBehaviour
 {
     float elapsed = parentNote.GetNoteTime();
 
-    float progress = Mathf.Clamp01(elapsed / approachTime);
+    float progress = Mathf.Clamp01(
+    elapsed / parentNote.GetApproachTime()
+);
     float scale = Mathf.Lerp(startScale, 1f, progress);
 
     transform.localScale = Vector3.one * scale;
